@@ -1,0 +1,62 @@
+.dot {
+	font-size: 16px;
+}
+
+.delete_img {
+	width: 40px;
+}
+
+.trashIcon {
+	color: #d9534f;
+	width: 15px;
+	height: 15px;
+	margin-bottom: 4px;
+}
+
+.modalOverlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.4);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 9999;
+}
+
+.deleteModal {
+	background: white;
+	width: 100%;
+	max-width: 500px;
+	border-radius: 8px;
+	position: relative;
+	overflow: visible;
+}
+
+.deleteModal__closeBtn {
+	position: absolute;
+	top: -20px;
+	right: -20px;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	border: none;
+	background: white;
+	font-size: 15px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+}
+
+.deleteModal__footer {
+	background-color: var(--main-green-color) !important;
+	padding: 20px 30px;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	border-bottom-left-radius: 8px;
+	border-bottom-right-radius: 8px;
+}

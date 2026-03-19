@@ -1,0 +1,67 @@
+.circle_orders {
+	width: 35px;
+	height: 35px;
+	background: var(--main-green-color);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: none;
+	cursor: pointer;
+	padding: 0;
+	border: 3px solid rgba(0, 0, 0, 0.2);
+	transition: transform 0.2s;
+
+	svg {
+		font-size: 2rem;
+		color: white;
+	}
+}
+
+.circle_orders:hover {
+	transform: scale(1.1);
+	border: 3px solid rgba(0, 0, 0, 0.2);
+}
+
+.card__close {
+	top: -15px;
+	right: -15px;
+	z-index: 10;
+	font-size: 0.8rem;
+}
+
+.orderProducts__img {
+	width: 45px;
+}
+
+.orderСard {
+	cursor: pointer;
+	border-radius: 8px;
+	border: 1px solid gray;
+}
+
+.orderСard__title {
+	width: 30%;
+	font-size: 1.2rem;
+}
+
+.orderProducts__img {
+	width: 45px;
+	height: auto;
+	object-fit: contain;
+}
+
+.orderProducts__title {
+	font-weight: 600;
+	color: var(--color-text-main);
+	cursor: pointer;
+}
+
+.orderProducts__dot {
+	font-size: 10px;
+}
+
+.orderProducts__status {
+	font-size: 14px;
+	font-weight: 500;
+	color: var(--main-green-color);
+}
