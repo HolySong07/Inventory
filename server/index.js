@@ -15,7 +15,8 @@ const pool = mysql.createPool({
 	host: "localhost",
 	user: "root",
 	password: "root_password",
-	database: "inventory_db",
+	database: "inv_DB",
+	port: 3308,
 	waitForConnections: true,
 	connectionLimit: 10,
 	queueLimit: 0

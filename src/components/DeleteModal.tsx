@@ -1,8 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { RootState } from "../store/store";
-import { closeDeleteModal, removeOrder } from "../store/ordersSlice";
+import { RootState } from "@/store/store";
+import { closeDeleteModal } from "@/store/ordersSlice";
 import { FiTrash2 } from "react-icons/fi";
 import s from "@/styles/Modal.module.css";
 
@@ -17,7 +17,6 @@ const DeleteModal: React.FC = () => {
 	if (!isDeleteModalOpen || !order) return null;
 
 	const handleDelete = () => {
-		dispatch(removeOrder(order.id));
 		dispatch(closeDeleteModal());
 	};
 

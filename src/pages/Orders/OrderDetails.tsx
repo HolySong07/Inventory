@@ -39,13 +39,9 @@ const OrderDetails: React.FC = () => {
 			<div className='card_body p-0'>
 				{order.products && order.products.length > 0 ? (
 					<div className='list-group list-group-flush'>
-						{order.products.map((prod) => (
-							<div className={s.orderDetails__body}>
-								<OrderProductsList
-									products={order?.products ?? []}
-								/>
-							</div>
-						))}
+						<div className={s.orderDetails__body}>
+							<OrderProductsList products={order.products} />
+						</div>
 					</div>
 				) : (
 					<div className='p-5 text-center text-muted'>

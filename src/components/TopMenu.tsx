@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { formatFullDate } from "@/utils/helpers";
 import { FaRegClock } from "react-icons/fa";
-import Logo from "./Logo";
+import Logo from "@/components/Logo";
 import s from "@/styles/Logo.module.css";
 
 export default function TopMenu() {
