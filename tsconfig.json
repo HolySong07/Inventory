@@ -9,7 +9,9 @@
 		},
 		"moduleResolution": "bundler",
 		"strict": true,
-		"esModuleInterop": true
+		"esModuleInterop": true,
+		"skipLibCheck": true,
+		"types": ["vite/client"]
 	},
 	"include": ["src"]
 }
