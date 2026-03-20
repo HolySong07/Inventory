@@ -37,6 +37,7 @@ Backend:
 1. https://console.aiven.io/ Поднял тут MySQL, подключил к MySQL Wokbench. Создал таблицы и данные там
 2. https://dashboard.render.com/ тут поднят бекенд
 3. https://vercel.com/ - FE
+4. https://inventory-hazel-six.vercel.app - LINK
 
 +++++++++++++++++++++
 Инструкция для запуска и тестирования локально

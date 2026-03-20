@@ -4,7 +4,9 @@ import { setProducts } from "@/store/productsSlice";
 
 export const productsLoader = async () => {
 	try {
-		const res = await axios.get("http://localhost:3000/api/products");
+		const res = await axios.get(
+			`${import.meta.env.VITE_API_URL}/api/products`
+		);
 		store.dispatch(setProducts(res.data));
 		return res.data;
 	} catch (err) {
