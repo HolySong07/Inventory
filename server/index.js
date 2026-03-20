@@ -53,27 +53,6 @@ app.get("/api/orders", async (req, res) => {
 	}
 });
 
-let activeTabs = 0;
-
-const wss = new WebSocketServer({ port: 8080 });
-
-wss.on("connection", (ws) => {
-	activeTabs++;
-	broadcastActiveTabs();
-
-	ws.on("close", () => {
-		activeTabs--;
-		broadcastActiveTabs();
-	});
-});
-
-function broadcastActiveTabs() {
-	const data = JSON.stringify({ activeTabs });
-	wss.clients.forEach((client) => {
-		if (client.readyState === 1) client.send(data);
-	});
-}
-
 app.get("/api/products", async (req, res) => {
 	try {
 		const [products] = await pool.query("SELECT * FROM products");
@@ -103,6 +82,29 @@ app.get("/api/products", async (req, res) => {
 	}
 });
 
+let activeTabs = 0;
+
+const wss = new WebSocketServer({ server: httpServer });
+
+wss.on("connection", (ws) => {
+	activeTabs++;
+	broadcastActiveTabs();
+
+	ws.on("close", () => {
+		activeTabs--;
+		broadcastActiveTabs();
+	});
+});
+
+function broadcastActiveTabs() {
+	const data = JSON.stringify({ activeTabs });
+	wss.clients.forEach((client) => {
+		if (client.readyState === 1) client.send(data);
+	});
+}
+
+const PORT = process.env.PORT || 3000;
+
 httpServer.listen(process.env.PORT, () =>
-	console.log(`server running on port ${process.env.PORT}`)
+	console.log(`Server (API + WS) is running on port ${PORT}`)
 );

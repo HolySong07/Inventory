@@ -14,7 +14,7 @@ export default function TopMenu() {
 	}, []);
 
 	useEffect(() => {
-		const ws = new WebSocket("ws://localhost:8080");
+		const ws = new WebSocket(import.meta.env.VITE_WS_URL);
 		ws.onmessage = (event) => {
 			try {
 				const data = JSON.parse(event.data);
