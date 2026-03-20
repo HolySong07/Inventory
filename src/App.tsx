@@ -14,7 +14,7 @@ import Products from "@/pages/Products/Products";
 import { ordersLoader } from "@/pages/Orders/Orders.loader";
 import { productsLoader } from "@/pages/Products/Products.loader";
 import ErrorPage from "@/pages/ErrorPage";
-import "@/styles/custom.css";
+import "@/styles/Custom.css";
 import "@/styles/transitions.css";
 import "@/styles/variables.css";
 

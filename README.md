@@ -32,6 +32,12 @@ Backend:
 
 4. Real-time Session Tracking: Реализован мониторинг активных сессий через WebSockets.
 
+Внешние сервисы:
+
+1. https://console.aiven.io/ Поднял тут MySQL, подключил к MySQL Wokbench. Создал таблицы и данные там
+2. https://dashboard.render.com/ тут поднят бекенд
+3. https://vercel.com/ - FE
+
 +++++++++++++++++++++
 Инструкция для запуска и тестирования локально
 +++++++++++++++++++++
