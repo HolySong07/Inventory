@@ -5,6 +5,8 @@ import { createServer } from "http";
 import mysql from "mysql2/promise";
 import cors from "cors";
 import { WebSocketServer } from "ws";
+import dotenv from "dotenv";
+dotenv.config();
 
 const app = express();
 app.use(cors());
@@ -12,11 +14,11 @@ app.use(express.json());
 const httpServer = createServer(app);
 
 const pool = mysql.createPool({
-	host: "localhost",
-	user: "root",
-	password: "root_password",
-	database: "inv_DB",
-	port: 3308,
+	host: process.env.DB_HOST,
+	user: process.env.DB_USER,
+	password: process.env.DB_PASSWORD,
+	database: process.env.DB_NAME,
+	port: process.env.DB_PORT,
 	waitForConnections: true,
 	connectionLimit: 10,
 	queueLimit: 0
@@ -63,10 +65,6 @@ wss.on("connection", (ws) => {
 		activeTabs--;
 		broadcastActiveTabs();
 	});
-
-	ws.on("message", (msg) => {
-		console.log("Message from client:", msg.toString());
-	});
 });
 
 function broadcastActiveTabs() {
@@ -105,4 +103,6 @@ app.get("/api/products", async (req, res) => {
 	}
 });
 
-httpServer.listen(3000, () => console.log("server running on port 3000"));
+httpServer.listen(process.env.PORT, () =>
+	console.log(`server running on port ${process.env.PORT}`)
+);

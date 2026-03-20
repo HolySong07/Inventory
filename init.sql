@@ -1,4 +1,4 @@
-CREATE DATABASE IF NOT EXISTS inv_DB;
+
 USE inv_DB;
 
 CREATE TABLE orders (

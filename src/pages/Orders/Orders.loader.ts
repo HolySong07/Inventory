@@ -4,7 +4,9 @@ import { setOrders } from "@/store/ordersSlice";
 
 export const ordersLoader = async () => {
 	try {
-		const res = await axios.get("http://localhost:3000/api/orders");
+		const res = await axios.get(
+			`${import.meta.env.VITE_API_URL}/api/orders`
+		);
 		store.dispatch(setOrders(res.data));
 		return res.data;
 	} catch (err) {
